@@ -1,3 +1,5 @@
+require 'semantic-ui-sass'
+
 module SpreeFrontendSemanticUi
   class Engine < Rails::Engine
     require 'spree/core'
