@@ -22,6 +22,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'spree_core', '~> 3.1.0.beta'
   s.add_dependency 'semantic-ui-sass'
+  s.add_dependency 'sprockets-rails', '~> 2.2'
+
 
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'coffee-rails'
