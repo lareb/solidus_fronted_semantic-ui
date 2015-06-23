@@ -1,5 +1,9 @@
 Spree::FrontendHelper.module_eval do
 
+  def body_class
+  @body_class ||= "ui " + content_for?(:sidebar) ? 'two' : 'one' + "grid"
+  @body_class
+  end
   def link_to_cart(text = nil)
     text = text ? h(text) : Spree.t('cart')
     css_class = nil

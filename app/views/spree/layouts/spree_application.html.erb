@@ -10,21 +10,18 @@
 
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
 
-
-
-
     <div class="ui blue inverted basic segment">
       <div class="column">
         <%= render :partial => 'spree/shared/header' %>
       </div>
     </div>
 
-    <div class="ui grid">
-      <div id="wrapper" class="sixteen wide column" data-hook>
+    <div class="ui basic segment">
+      <div id="wrapper" class="" data-hook>
 
         <%= breadcrumbs(@taxon) %>
 
-        <div class='row'>
+        <div class='ui grid'>
           <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
 
           <div id="content" class="<%= !content_for?(:sidebar) ? "fourteen" : "ten" %> wide column" data-hook>
