@@ -1,14 +1,14 @@
 <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
-<%= form_tag spree.products_path, :method => :get, class: "navbar-form" do %>
-<div class="form-group">
+<%= form_tag spree.products_path, :method => :get, class: "ui form" do %>
+<div class="grouped fields">
   <% cache(cache_key_for_taxons) do %>
     <%= select_tag :taxon,
           options_for_select([[Spree.t(:all_departments), '']] +
                                 @taxons.map {|t| [t.name, t.id]},
-                                @taxon ? @taxon.id : params[:taxon]), 'aria-label' => 'Taxon', class: "form-control" %>
+                                @taxon ? @taxon.id : params[:taxon]), 'aria-label' => 'Taxon', class: "ui selection dropdown" %>
   <% end %>
 </div>
-<div class="form-group">
+<div class="field">
   <%= search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search), class: "form-control" %>
 </div>
 <%= submit_tag Spree.t(:search), :name => nil, class: "ui button" %>
