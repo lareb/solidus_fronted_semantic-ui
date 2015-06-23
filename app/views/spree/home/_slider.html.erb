@@ -1,0 +1,16 @@
+<% if @slider_products %>
+  <div id="home-slider">
+    <ul>
+      <% @slider_products.each do |product| %>
+        <li>
+            <div class="slider-product-image">
+            <%= link_to product_image(product), product %>
+          </div>
+          <div class="product-info">
+            <h4 class="product-title"><%= product.name %> </h4>
+         </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

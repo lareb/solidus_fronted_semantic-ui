@@ -13,21 +13,21 @@
 
 
 
-    <div class="ui row blue inverted basic segment">
+    <div class="ui blue inverted basic segment">
       <div class="column">
         <%= render :partial => 'spree/shared/header' %>
       </div>
     </div>
-    
-    <div class="container ui grid">
-      <div id="wrapper" class="column" data-hook>
+
+    <div class="ui grid">
+      <div id="wrapper" class="sixteen wide column" data-hook>
 
         <%= breadcrumbs(@taxon) %>
 
         <div class='row'>
           <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
 
-          <div id="content" class="<%= !content_for?(:sidebar) ? "sixteen" : "twelve" %> wide column" data-hook>
+          <div id="content" class="<%= !content_for?(:sidebar) ? "fourteen" : "ten" %> wide column" data-hook>
             <%= flash_messages %>
             <%= yield %>
           </div>
