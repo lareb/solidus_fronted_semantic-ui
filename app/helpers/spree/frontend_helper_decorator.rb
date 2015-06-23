@@ -1,7 +1,7 @@
 Spree::FrontendHelper.module_eval do
 
   def body_class
-  @body_class ||= content_for?(:sidebar) ? 'ui two column grid' : 'ui grid' 
+  @body_class ||= content_for?(:sidebar) ? 'ui two column grid' : 'ui grid'
   @body_class
   end
   def link_to_cart(text = nil)
@@ -9,10 +9,10 @@ Spree::FrontendHelper.module_eval do
     css_class = nil
 
     if simple_current_order.nil? or simple_current_order.item_count.zero?
-      text = "<span class='glyphicon glyphicon-shopping-cart'></span> #{text}: (#{Spree.t('empty')})"
+      text = "<i class='shopping cart icon'></i> #{text}: (#{Spree.t('empty')})"
       css_class = 'empty'
     else
-      text = "<span class='glyphicon glyphicon-shopping-cart'></span> #{text}: (#{simple_current_order.item_count})  <span class='amount'>#{simple_current_order.display_total.to_html}</span>"
+      text = "<i class='shopping cart icon'></i> #{text}: (#{simple_current_order.item_count})  <span class='amount'>#{simple_current_order.display_total.to_html}</span>"
       css_class = 'full'
     end
 
