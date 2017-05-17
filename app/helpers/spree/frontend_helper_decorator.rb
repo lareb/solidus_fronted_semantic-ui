@@ -1,4 +1,5 @@
-Spree::FrontendHelper.module_eval do
+module Spree
+  module FrontendHelper
 
   def body_class
   @body_class ||= content_for?(:sidebar) ? 'ui two column grid' : 'ui grid'
@@ -88,4 +89,5 @@ Spree::FrontendHelper.module_eval do
   end
 
 
+end
 end
